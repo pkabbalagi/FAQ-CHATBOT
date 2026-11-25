@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CodeAlpha FAQ Chatbot">
+  <title>CodeAlpha FAQ Chatbot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <main class="chat-shell">
+    <header class="chat-header">
+      <div class="brand-mark" aria-hidden="true">C</div>
+      <div>
+        <h1>CodeAlpha Assistant</h1>
+        <p><span class="online-dot"></span>FAQ support is online</p>
+      </div>
+      <button id="clear-chat" class="clear-button" type="button" title="Clear chat">Clear chat</button>
+    </header>
+
+    <section id="chat-history" class="chat-history" aria-live="polite" aria-label="Conversation">
+      <div class="message-row bot-row">
+        <div class="bot-avatar">C</div>
+        <div class="message bot-message">Hello! I’m the CodeAlpha FAQ assistant. Ask me about courses, admissions, fees, certificates, or support.</div>
+      </div>
+    </section>
+
+    <section class="quick-replies" aria-label="Suggested questions">
+      <button type="button" class="quick-reply">What courses do you offer?</button>
+      <button type="button" class="quick-reply">What are the admission requirements?</button>
+      <button type="button" class="quick-reply">How much are the fees?</button>
+      <button type="button" class="quick-reply">How can I contact support?</button>
+    </section>
+
+    <form id="chat-form" class="chat-form">
+      <label class="sr-only" for="message-input">Type your question</label>
+      <input id="message-input" name="message" type="text" placeholder="Ask a question..." autocomplete="off">
+      <button id="send-button" class="send-button" type="submit" aria-label="Send message">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4Z"/></svg>
+      </button>
+    </form>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
